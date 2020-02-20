@@ -256,12 +256,10 @@ namespace Flipt.Client
     [System.CodeDom.Compiler.GeneratedCode("NSwag", "13.2.2.0 (NJsonSchema v10.1.4.0 (Newtonsoft.Json v11.0.0.0))")]
     public partial class FliptAPIClient : Flipt.Client.FliptClientBase, IFliptAPIClient
     {
-        private System.Net.Http.HttpClient _httpClient;
         private System.Lazy<Newtonsoft.Json.JsonSerializerSettings> _settings;
     
-        public FliptAPIClient(Flipt.Client.FliptClientConfiguration configuration, System.Net.Http.HttpClient httpClient) : base(configuration)
+        public FliptAPIClient(Flipt.Client.FliptClientConfiguration configuration) : base(configuration)
         {
-            _httpClient = httpClient; 
             _settings = new System.Lazy<Newtonsoft.Json.JsonSerializerSettings>(CreateSerializerSettings);
         }
     
@@ -294,7 +292,7 @@ namespace Flipt.Client
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append("api/v1/evaluate");
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -373,7 +371,7 @@ namespace Flipt.Client
             }
             urlBuilder_.Length--;
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -440,7 +438,7 @@ namespace Flipt.Client
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append("api/v1/flags");
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -523,7 +521,7 @@ namespace Flipt.Client
             }
             urlBuilder_.Length--;
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -594,7 +592,7 @@ namespace Flipt.Client
             urlBuilder_.Append("api/v1/flags/{flag_key}/rules");
             urlBuilder_.Replace("{flag_key}", System.Uri.EscapeDataString(ConvertToString(flag_key, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -668,7 +666,7 @@ namespace Flipt.Client
             urlBuilder_.Append("api/v1/flags/{flag_key}/rules/order");
             urlBuilder_.Replace("{flag_key}", System.Uri.EscapeDataString(ConvertToString(flag_key, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -746,7 +744,7 @@ namespace Flipt.Client
             urlBuilder_.Replace("{flag_key}", System.Uri.EscapeDataString(ConvertToString(flag_key, System.Globalization.CultureInfo.InvariantCulture)));
             urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -821,7 +819,7 @@ namespace Flipt.Client
             urlBuilder_.Replace("{flag_key}", System.Uri.EscapeDataString(ConvertToString(flag_key, System.Globalization.CultureInfo.InvariantCulture)));
             urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -896,7 +894,7 @@ namespace Flipt.Client
             urlBuilder_.Replace("{flag_key}", System.Uri.EscapeDataString(ConvertToString(flag_key, System.Globalization.CultureInfo.InvariantCulture)));
             urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -974,7 +972,7 @@ namespace Flipt.Client
             urlBuilder_.Replace("{flag_key}", System.Uri.EscapeDataString(ConvertToString(flag_key, System.Globalization.CultureInfo.InvariantCulture)));
             urlBuilder_.Replace("{rule_id}", System.Uri.EscapeDataString(ConvertToString(rule_id, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1061,7 +1059,7 @@ namespace Flipt.Client
             }
             urlBuilder_.Length--;
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1140,7 +1138,7 @@ namespace Flipt.Client
             urlBuilder_.Replace("{rule_id}", System.Uri.EscapeDataString(ConvertToString(rule_id, System.Globalization.CultureInfo.InvariantCulture)));
             urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1214,7 +1212,7 @@ namespace Flipt.Client
             urlBuilder_.Append("api/v1/flags/{flag_key}/variants");
             urlBuilder_.Replace("{flag_key}", System.Uri.EscapeDataString(ConvertToString(flag_key, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1292,7 +1290,7 @@ namespace Flipt.Client
             urlBuilder_.Replace("{flag_key}", System.Uri.EscapeDataString(ConvertToString(flag_key, System.Globalization.CultureInfo.InvariantCulture)));
             urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1367,7 +1365,7 @@ namespace Flipt.Client
             urlBuilder_.Replace("{flag_key}", System.Uri.EscapeDataString(ConvertToString(flag_key, System.Globalization.CultureInfo.InvariantCulture)));
             urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1441,7 +1439,7 @@ namespace Flipt.Client
             urlBuilder_.Append("api/v1/flags/{key}");
             urlBuilder_.Replace("{key}", System.Uri.EscapeDataString(ConvertToString(key, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1512,7 +1510,7 @@ namespace Flipt.Client
             urlBuilder_.Append("api/v1/flags/{key}");
             urlBuilder_.Replace("{key}", System.Uri.EscapeDataString(ConvertToString(key, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1583,7 +1581,7 @@ namespace Flipt.Client
             urlBuilder_.Append("api/v1/flags/{key}");
             urlBuilder_.Replace("{key}", System.Uri.EscapeDataString(ConvertToString(key, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1662,7 +1660,7 @@ namespace Flipt.Client
             }
             urlBuilder_.Length--;
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1729,7 +1727,7 @@ namespace Flipt.Client
             var urlBuilder_ = new System.Text.StringBuilder();
             urlBuilder_.Append("api/v1/segments");
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1803,7 +1801,7 @@ namespace Flipt.Client
             urlBuilder_.Append("api/v1/segments/{key}");
             urlBuilder_.Replace("{key}", System.Uri.EscapeDataString(ConvertToString(key, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1874,7 +1872,7 @@ namespace Flipt.Client
             urlBuilder_.Append("api/v1/segments/{key}");
             urlBuilder_.Replace("{key}", System.Uri.EscapeDataString(ConvertToString(key, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -1945,7 +1943,7 @@ namespace Flipt.Client
             urlBuilder_.Append("api/v1/segments/{key}");
             urlBuilder_.Replace("{key}", System.Uri.EscapeDataString(ConvertToString(key, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -2019,7 +2017,7 @@ namespace Flipt.Client
             urlBuilder_.Append("api/v1/segments/{segment_key}/constraints");
             urlBuilder_.Replace("{segment_key}", System.Uri.EscapeDataString(ConvertToString(segment_key, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -2097,7 +2095,7 @@ namespace Flipt.Client
             urlBuilder_.Replace("{segment_key}", System.Uri.EscapeDataString(ConvertToString(segment_key, System.Globalization.CultureInfo.InvariantCulture)));
             urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
@@ -2172,7 +2170,7 @@ namespace Flipt.Client
             urlBuilder_.Replace("{segment_key}", System.Uri.EscapeDataString(ConvertToString(segment_key, System.Globalization.CultureInfo.InvariantCulture)));
             urlBuilder_.Replace("{id}", System.Uri.EscapeDataString(ConvertToString(id, System.Globalization.CultureInfo.InvariantCulture)));
     
-            var client_ = _httpClient;
+            var client_ = await CreateHttpClientAsync(cancellationToken).ConfigureAwait(false);
             try
             {
                 using (var request_ = new System.Net.Http.HttpRequestMessage())
